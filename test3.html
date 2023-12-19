@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test3</title>
+    <style>
+        /* Image Slideshow */
+        .slideshow-container {
+            position: relative;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .caption-container {
+            text-align: center;
+            padding: 2px 16px;
+            background: #f1f1f1;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .hero-msg {
+            background-color: white;
+            color: black;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.70rem;
+            width: 80%;
+            margin-bottom: 40px;
+        }
+
+        .hero-msg a {
+            color: #007185;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Hero Section Slide -->
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg1.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg2.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg3.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg4.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <div class="hero-section" style="background-image: url(hero-img.jpg5.jpg);">
+                <div class="hero-msg">
+                    <p>You are on amazon.com. You can also shop on Amazon Pakistan for millions of products with fast local delivery. <a href="Click here to go to amazon">Click here to go to amazon</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Image text -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+            captionText.innerHTML = slides[slideIndex-1].querySelector('.numbertext').innerHTML;
+        }
+    </script>
+</body>
+</html>
